@@ -50,6 +50,8 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+    /* Fundo estrelado */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -61,35 +63,39 @@ body {
     flex-direction: column;
 }
 
-        
+.stars {
+    background: url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
-        /* Preloader melhorado */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at center, #1a0d2e 0%, var(--background) 70%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.6s ease-out;
-        }
+/* Header */
+header {
+    padding: 2rem 1rem;
+}
 
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 3px solid transparent;
-            border-top: 3px solid var(--primary-light);
-            border-right: 3px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-            filter: drop-shadow(0 0 20px var(--glow));
-        }
+header .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
 
+header h1 {
+    margin: 0.5rem 0 0.2rem;
+    font-size: 2rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.8;
+}    
+
+      
         .loader::before {
             content: '';
             position: absolute;
@@ -109,50 +115,10 @@ body {
             font-size: 0.9rem;
             font-weight: 500;
             animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
-        }
-
-        #particle-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-       .particle {
-  background-color: #00bfff; /* azul claro (DeepSkyBlue) */
-  animation: fall linear infinite;
-}
+       
 
 
-        @keyframes fall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.4;
-            }
-            100% {
-                transform: translateY(105vh) rotate(360deg); /* Ajustado para cair além da tela */
-                opacity: 0;
-            }
-        }
-
+       
         .container {
             max-width: 1200px; /* Aumentado para acomodar 2 colunas */
             width: 100%;
@@ -187,7 +153,15 @@ body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-        
+       .stars {
+    background: url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+} 
 
         .main-title {
             font-family: 'Montserrat', sans-serif;
@@ -260,31 +234,7 @@ body {
             animation: fadeCard 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }
 
-        /* Variáveis de cor para o neon e hover do card - Ajustado para o degradê */
-        .tool-card.tarefas {
-            --glow-card: var(--primary-ultra-light); /* Mais claro */
-            background: linear-gradient(135deg, rgba(138, 43, 226, 0.25) 0%, var(--glass-bg) 100%); /* Roxo mais visível */
-        }
-        .tool-card.redacao {
-            --glow-card: var(--primary-light); /* Levemente mais escuro que tarefas */
-            background: linear-gradient(135deg, rgba(171, 130, 255, 0.18) 0%, var(--glass-bg) 100%);
-        }
-        .tool-card.alura {
-            --glow-card: var(--primary); /* Cor primária */
-            background: linear-gradient(135deg, rgba(138, 43, 226, 0.15) 0%, var(--glass-bg) 100%);
-        }
-        .tool-card.noturno {
-            --glow-card: var(--primary-dark); /* Mais escuro */
-            background: linear-gradient(135deg, rgba(106, 13, 173, 0.12) 0%, var(--glass-bg) 100%);
-        }
-        .tool-card.leiasp { /* Novo estilo para LeiaSP - Ajustado para ser mais escuro que noturno e mais claro que livro */
-            --glow-card: #5b0c90; /* Cor ajustada */
-            background: linear-gradient(135deg, rgba(91, 12, 144, 0.10) 0%, var(--glass-bg) 100%); /* Cor ajustada */
-        }
-        .tool-card.livro {
-            --glow-card: #4a097a; /* Ainda mais escuro */
-            background: linear-gradient(135deg, rgba(74, 9, 122, 0.10) 0%, var(--glass-bg) 100%);
-        }
+      
 
         /* Cores iniciais frias dos ícones por card */
         .tool-card.tarefas .tool-icon {
